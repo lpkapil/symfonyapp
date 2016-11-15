@@ -21,7 +21,7 @@
                         <td><a href="{{ path('cms_user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                         <td>{{ user.username }}</td>
                         <td>{{ user.password | slice(0,20) }}</td>
-                        <td class="pull-right"><a href="{{ path('cms_user_show', { 'id': user.id }) }}" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a> <a href="{{ path('cms_user_edit', { 'id': user.id }) }}" data-placement="top" data-toggle="tooltip" title="View"><button class="btn btn-primary btn-xs" data-title="View" data-toggle="modal" data-target="#view" ><span class="glyphicon glyphicon-eye-open"></span></button></a></td>
+                        <td class="pull-right"><a href="{{ path('cms_user_edit', { 'id': user.id }) }}" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a> <a href="{{ path('cms_user_show', { 'id': user.id }) }}" data-placement="top" data-toggle="tooltip" title="View"><button class="btn btn-primary btn-xs" data-title="View" data-toggle="modal" data-target="#view" ><span class="glyphicon glyphicon-eye-open"></span></button></a></td>
                     </tr>
                 {% endfor %}
             </tbody>

@@ -29,7 +29,7 @@ class Category {
      */
     private $name;
 
-    /*
+    /**
      * @ORM\OneToMany(targetEntity="Page", mappedBy="category")
      */
     private $pages;
@@ -108,5 +108,5 @@ class Category {
     public function getPages() {
         return $this->pages;
     }
-  
+
 }
