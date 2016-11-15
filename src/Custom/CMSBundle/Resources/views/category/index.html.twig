@@ -2,6 +2,7 @@
 
 {% block body %}
     <div class="page-header">
+        <a href="{{ path('cms_category_new') }}" class="btn btn-sm btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span> Add New</a>   
         <h2>Categories</h2>
     </div>
 
@@ -25,10 +26,4 @@
             </tbody>
         </table>
     </div>
-
-    <ul>
-        <li>
-            <a href="{{ path('cms_category_new') }}">Create a new category</a>
-        </li>
-    </ul>
 {% endblock %}

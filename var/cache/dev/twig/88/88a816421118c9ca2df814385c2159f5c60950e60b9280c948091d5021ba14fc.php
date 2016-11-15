@@ -21,23 +21,27 @@ class __TwigTemplate_af5b1701494895d1b61caed3e0ec268aba1e70830de649e07ac93b251fe
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_293ccb38a7988a3c9e1ddced38016c567fd67e44b02333539b5057f762e057b2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_293ccb38a7988a3c9e1ddced38016c567fd67e44b02333539b5057f762e057b2->enter($__internal_293ccb38a7988a3c9e1ddced38016c567fd67e44b02333539b5057f762e057b2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CustomCMSBundle:page:index.html.twig"));
+        $__internal_aebc6195385b727c8f443c8bdd0650002573a79dd3acc67fc6c2d345497033c9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_aebc6195385b727c8f443c8bdd0650002573a79dd3acc67fc6c2d345497033c9->enter($__internal_aebc6195385b727c8f443c8bdd0650002573a79dd3acc67fc6c2d345497033c9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CustomCMSBundle:page:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_293ccb38a7988a3c9e1ddced38016c567fd67e44b02333539b5057f762e057b2->leave($__internal_293ccb38a7988a3c9e1ddced38016c567fd67e44b02333539b5057f762e057b2_prof);
+        $__internal_aebc6195385b727c8f443c8bdd0650002573a79dd3acc67fc6c2d345497033c9->leave($__internal_aebc6195385b727c8f443c8bdd0650002573a79dd3acc67fc6c2d345497033c9_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_93bde026241cc37bfcb6e2c706168cf54a918f88120c10b26be52a7a47f7cda7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_93bde026241cc37bfcb6e2c706168cf54a918f88120c10b26be52a7a47f7cda7->enter($__internal_93bde026241cc37bfcb6e2c706168cf54a918f88120c10b26be52a7a47f7cda7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "CustomCMSBundle:page:index.html.twig"));
+        $__internal_b4cf3b3fc6b68f61534a4b110d071b104a728b65393c17a2daed16eeff989e1b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b4cf3b3fc6b68f61534a4b110d071b104a728b65393c17a2daed16eeff989e1b->enter($__internal_b4cf3b3fc6b68f61534a4b110d071b104a728b65393c17a2daed16eeff989e1b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "CustomCMSBundle:page:index.html.twig"));
 
         // line 4
         echo "    <div class=\"page-header\">
+        <a href=\"";
+        // line 5
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("cms_page_new");
+        echo "\" class=\"btn btn-sm btn-primary pull-right\"><span class=\"glyphicon glyphicon-plus\"></span> Add New</a>   
         <h2>Pages</h2>
     </div>
 
@@ -53,28 +57,28 @@ class __TwigTemplate_af5b1701494895d1b61caed3e0ec268aba1e70830de649e07ac93b251fe
             </thead>
             <tbody>
                 ";
-        // line 19
+        // line 20
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["pages"]) ? $context["pages"] : $this->getContext($context, "pages")));
         foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-            // line 20
+            // line 21
             echo "                    <tr>
                         <td><a href=\"";
-            // line 21
+            // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("cms_page_show", array("id" => $this->getAttribute($context["page"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["page"], "id", array()), "html", null, true);
             echo "</a></td>
                         <td>";
-            // line 22
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["page"], "title", array()), "html", null, true);
             echo "</td>
                         <td>";
-            // line 23
-            echo twig_escape_filter($this->env, $this->getAttribute($context["page"], "content", array()), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, twig_slice($this->env, $this->getAttribute($context["page"], "content", array()), 0, 150), "html", null, true);
             echo "</td>
                         <td class=\"pull-right\"><a href=\"";
-            // line 24
+            // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("cms_page_edit", array("id" => $this->getAttribute($context["page"], "id", array()))), "html", null, true);
             echo "\" data-placement=\"top\" data-toggle=\"tooltip\" title=\"Edit\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\"></span></button></a> <a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("cms_page_show", array("id" => $this->getAttribute($context["page"], "id", array()))), "html", null, true);
@@ -85,22 +89,13 @@ class __TwigTemplate_af5b1701494895d1b61caed3e0ec268aba1e70830de649e07ac93b251fe
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 28
         echo "            </tbody>
         </table>
     </div>
-
-    <ul>
-        <li>
-            <a href=\"";
-        // line 33
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("cms_page_new");
-        echo "\">Create a new page</a>
-        </li>
-    </ul>
 ";
         
-        $__internal_93bde026241cc37bfcb6e2c706168cf54a918f88120c10b26be52a7a47f7cda7->leave($__internal_93bde026241cc37bfcb6e2c706168cf54a918f88120c10b26be52a7a47f7cda7_prof);
+        $__internal_b4cf3b3fc6b68f61534a4b110d071b104a728b65393c17a2daed16eeff989e1b->leave($__internal_b4cf3b3fc6b68f61534a4b110d071b104a728b65393c17a2daed16eeff989e1b_prof);
 
     }
 
@@ -116,7 +111,7 @@ class __TwigTemplate_af5b1701494895d1b61caed3e0ec268aba1e70830de649e07ac93b251fe
 
     public function getDebugInfo()
     {
-        return array (  97 => 33,  89 => 27,  78 => 24,  74 => 23,  70 => 22,  64 => 21,  61 => 20,  57 => 19,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  93 => 28,  82 => 25,  78 => 24,  74 => 23,  68 => 22,  65 => 21,  61 => 20,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -133,6 +128,7 @@ class __TwigTemplate_af5b1701494895d1b61caed3e0ec268aba1e70830de649e07ac93b251fe
 
 {% block body %}
     <div class=\"page-header\">
+        <a href=\"{{ path('cms_page_new') }}\" class=\"btn btn-sm btn-primary pull-right\"><span class=\"glyphicon glyphicon-plus\"></span> Add New</a>   
         <h2>Pages</h2>
     </div>
 
@@ -151,19 +147,13 @@ class __TwigTemplate_af5b1701494895d1b61caed3e0ec268aba1e70830de649e07ac93b251fe
                     <tr>
                         <td><a href=\"{{ path('cms_page_show', { 'id': page.id }) }}\">{{ page.id }}</a></td>
                         <td>{{ page.title }}</td>
-                        <td>{{ page.content }}</td>
+                        <td>{{ page.content | slice(0,150) }}</td>
                         <td class=\"pull-right\"><a href=\"{{ path('cms_page_edit', { 'id': page.id }) }}\" data-placement=\"top\" data-toggle=\"tooltip\" title=\"Edit\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\"></span></button></a> <a href=\"{{ path('cms_page_show', { 'id': page.id }) }}\" data-placement=\"top\" data-toggle=\"tooltip\" title=\"View\"><button class=\"btn btn-primary btn-xs\" data-title=\"View\" data-toggle=\"modal\" data-target=\"#view\" ><span class=\"glyphicon glyphicon-eye-open\"></span></button></a></td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-
-    <ul>
-        <li>
-            <a href=\"{{ path('cms_page_new') }}\">Create a new page</a>
-        </li>
-    </ul>
 {% endblock %}
 ", "CustomCMSBundle:page:index.html.twig", "/var/www/html/symfonyapp/src/Custom/CMSBundle/Resources/views/page/index.html.twig");
     }
