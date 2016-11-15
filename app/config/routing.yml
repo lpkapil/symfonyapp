@@ -1,0 +1,15 @@
+custom_cms:
+    resource: "@CustomCMSBundle/Resources/config/routing.yml"
+    prefix:   /
+
+custom_cms_cms_category:
+    resource: "@CustomCMSBundle/Resources/config/routing/category.yml"
+    prefix:   /cms/category
+
+custom_cms_cms_page:
+    resource: "@CustomCMSBundle/Resources/config/routing/page.yml"
+    prefix:   /cms/page
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

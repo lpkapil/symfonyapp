@@ -1,0 +1,24 @@
+cms_category_index:
+    path:     /
+    defaults: { _controller: "CustomCMSBundle:Category:index" }
+    methods:  GET
+
+cms_category_show:
+    path:     /{id}/show
+    defaults: { _controller: "CustomCMSBundle:Category:show" }
+    methods:  GET
+
+cms_category_new:
+    path:     /new
+    defaults: { _controller: "CustomCMSBundle:Category:new" }
+    methods:  [GET, POST]
+
+cms_category_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CustomCMSBundle:Category:edit" }
+    methods:  [GET, POST]
+
+cms_category_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CustomCMSBundle:Category:delete" }
+    methods:  DELETE

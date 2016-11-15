@@ -1,0 +1,24 @@
+cms_user_index:
+    path:     /
+    defaults: { _controller: "CustomCMSBundle:User:index" }
+    methods:  GET
+
+cms_user_show:
+    path:     /{id}/show
+    defaults: { _controller: "CustomCMSBundle:User:show" }
+    methods:  GET
+
+cms_user_new:
+    path:     /new
+    defaults: { _controller: "CustomCMSBundle:User:new" }
+    methods:  [GET, POST]
+
+cms_user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CustomCMSBundle:User:edit" }
+    methods:  [GET, POST]
+
+cms_user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CustomCMSBundle:User:delete" }
+    methods:  DELETE
