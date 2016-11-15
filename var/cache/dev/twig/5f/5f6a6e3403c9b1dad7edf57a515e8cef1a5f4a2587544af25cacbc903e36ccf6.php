@@ -21,20 +21,20 @@ class __TwigTemplate_8b6006ea6692c0c76c6878bb8a161cdbb546a034dfc207a2faf76c241ac
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ad930724d34a8dba9c0a4b18571021d26ece83ac454f7f53770649e673a81780 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ad930724d34a8dba9c0a4b18571021d26ece83ac454f7f53770649e673a81780->enter($__internal_ad930724d34a8dba9c0a4b18571021d26ece83ac454f7f53770649e673a81780_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CustomCMSBundle:Default:index.html.twig"));
+        $__internal_beaa1383ec5c26359c278a53af46543a5740491a3280fcdf2d7904adbfab453c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_beaa1383ec5c26359c278a53af46543a5740491a3280fcdf2d7904adbfab453c->enter($__internal_beaa1383ec5c26359c278a53af46543a5740491a3280fcdf2d7904adbfab453c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CustomCMSBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_ad930724d34a8dba9c0a4b18571021d26ece83ac454f7f53770649e673a81780->leave($__internal_ad930724d34a8dba9c0a4b18571021d26ece83ac454f7f53770649e673a81780_prof);
+        $__internal_beaa1383ec5c26359c278a53af46543a5740491a3280fcdf2d7904adbfab453c->leave($__internal_beaa1383ec5c26359c278a53af46543a5740491a3280fcdf2d7904adbfab453c_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_597536672ca3de6616832c84435fb45d2ce166d9aab48a615702c07d2c850dfb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_597536672ca3de6616832c84435fb45d2ce166d9aab48a615702c07d2c850dfb->enter($__internal_597536672ca3de6616832c84435fb45d2ce166d9aab48a615702c07d2c850dfb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "CustomCMSBundle:Default:index.html.twig"));
+        $__internal_2627ec6563bdf2bf80771807fef26a1eafd8a11eb13911222606de214035b802 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2627ec6563bdf2bf80771807fef26a1eafd8a11eb13911222606de214035b802->enter($__internal_2627ec6563bdf2bf80771807fef26a1eafd8a11eb13911222606de214035b802_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "CustomCMSBundle:Default:index.html.twig"));
 
         // line 4
         echo "    ";
@@ -77,8 +77,10 @@ class __TwigTemplate_8b6006ea6692c0c76c6878bb8a161cdbb546a034dfc207a2faf76c241ac
                         <p>
                             <i class=\"glyphicon glyphicon-user\"></i>&nbsp;John
                             &nbsp;<i class=\"glyphicon glyphicon-calendar\"></i>&nbsp;Sept 16th, 2012
-                            &nbsp;<i class=\"glyphicon glyphicon-tags\"></i>&nbsp;<a href=\"#\"><span class=\"label label-default\">Snipp</span></a> 
-                            <a href=\"#\"><span class=\"label label-default\">Bootstrap</span></a>
+                            &nbsp;<i class=\"glyphicon glyphicon-tags\"></i>&nbsp; <a href=\"#\"><span class=\"label label-default\">";
+            // line 29
+            echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $this->getAttribute($this->getAttribute($context["page"], "category", array()), "name", array())), "html", null, true);
+            echo "</span></a> 
                         </p>
                     </div>
                 </div>
@@ -91,7 +93,7 @@ class __TwigTemplate_8b6006ea6692c0c76c6878bb8a161cdbb546a034dfc207a2faf76c241ac
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_597536672ca3de6616832c84435fb45d2ce166d9aab48a615702c07d2c850dfb->leave($__internal_597536672ca3de6616832c84435fb45d2ce166d9aab48a615702c07d2c850dfb_prof);
+        $__internal_2627ec6563bdf2bf80771807fef26a1eafd8a11eb13911222606de214035b802->leave($__internal_2627ec6563bdf2bf80771807fef26a1eafd8a11eb13911222606de214035b802_prof);
 
     }
 
@@ -107,7 +109,7 @@ class __TwigTemplate_8b6006ea6692c0c76c6878bb8a161cdbb546a034dfc207a2faf76c241ac
 
     public function getDebugInfo()
     {
-        return array (  70 => 20,  66 => 19,  51 => 9,  45 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  82 => 29,  70 => 20,  66 => 19,  51 => 9,  45 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -148,8 +150,7 @@ class __TwigTemplate_8b6006ea6692c0c76c6878bb8a161cdbb546a034dfc207a2faf76c241ac
                         <p>
                             <i class=\"glyphicon glyphicon-user\"></i>&nbsp;John
                             &nbsp;<i class=\"glyphicon glyphicon-calendar\"></i>&nbsp;Sept 16th, 2012
-                            &nbsp;<i class=\"glyphicon glyphicon-tags\"></i>&nbsp;<a href=\"#\"><span class=\"label label-default\">Snipp</span></a> 
-                            <a href=\"#\"><span class=\"label label-default\">Bootstrap</span></a>
+                            &nbsp;<i class=\"glyphicon glyphicon-tags\"></i>&nbsp; <a href=\"#\"><span class=\"label label-default\">{{ page.category.name | capitalize }}</span></a> 
                         </p>
                     </div>
                 </div>

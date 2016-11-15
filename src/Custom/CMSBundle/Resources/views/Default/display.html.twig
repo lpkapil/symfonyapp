@@ -5,8 +5,8 @@
 
 {% block body %}
     <div class="page-header">
-        <h1>{{ page.title | capitalize }}</h1>
-        <span><strong>Category:</strong> {{ page.category.name | capitalize }}</span>
+        <h1>{{ page.title | capitalize }}</h1><br>
+        <span><i class="glyphicon glyphicon-tags"></i>&nbsp; {{ page.category.name | capitalize }}</span>
     </div>
     <p>{{ page.content }}</p>  
 {% endblock %}
