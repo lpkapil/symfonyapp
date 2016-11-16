@@ -1,16 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Category creation</h1>
+    <div class="page-header">
+        <h2>Add New Category</h2>
+    </div>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    {#{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Create" />
+    {{ form_end(form) }}#}
 
-    <ul>
-        <li>
-            <a href="{{ path('cms_category_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{ form_start(form) }}
+
+            <div class="form-group clearfix">
+                {{ form_label(form.name, 'Category Name', {'label_attr': {'class': 'control-label col-xs-2'}}) }}
+                <div class="col-xs-6">
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}})  }}
+                </div>
+            </div><br>
+
+            <div class="form-group pull-right">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}
