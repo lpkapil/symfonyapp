@@ -12,4 +12,7 @@ and open the template in the editor.
     margin-bottom:60px;
 }
 
-
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0px !important;
+    margin: 7px !important;
+}

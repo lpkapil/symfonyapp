@@ -3,6 +3,7 @@
 namespace Custom\CMSBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Page
@@ -25,6 +26,7 @@ class Page {
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\NotNull()
      */
     private $title;
 
@@ -32,12 +34,14 @@ class Page {
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     * @Assert\NotNull()
      */
     private $content;
 
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="pages")      
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @Assert\NotNull()
      */
     private $category;
 

@@ -5,6 +5,7 @@ namespace Custom\CMSBundle\Controller;
 use Custom\CMSBundle\Entity\Page;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Page controller.
@@ -31,11 +32,31 @@ class PageController extends Controller {
      *
      */
     public function newAction(Request $request) {
+
+
+        //Ajax Handler
+//        if ($request->isXmlHttpRequest()) {
+//            $response = new JsonResponse(array('name' => 'test'));
+//            echo $response->getContent();
+//            exit();
+//        }
+        //Conventional Handler
         $page = new Page();
         $form = $this->createForm('Custom\CMSBundle\Form\PageType', $page);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+//            $validator = $this->get('validator');
+//            foreach ($validator->validate($page) as $error) {
+//                $errors[$error->getPropertyPath()][] = $error->getMessage();
+//            }
+//            echo "<pre>";
+//            print_r($errors);
+//            echo "</pre>";
+//            die();
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($page);
             $em->flush($page);
@@ -46,6 +67,7 @@ class PageController extends Controller {
         return $this->render('CustomCMSBundle:page:new.html.twig', array(
                     'page' => $page,
                     'form' => $form->createView(),
+                    'errors'
         ));
     }
 

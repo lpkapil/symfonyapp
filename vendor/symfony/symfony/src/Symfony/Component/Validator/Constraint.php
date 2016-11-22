@@ -29,8 +29,8 @@ use Symfony\Component\Validator\Exception\MissingOptionsException;
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-abstract class Constraint
-{
+abstract class Constraint {
+
     /**
      * The name of the group given to all constraints with no explicit group.
      *
@@ -75,13 +75,10 @@ abstract class Constraint
      *
      * @throws InvalidArgumentException If the error code does not exist
      */
-    public static function getErrorName($errorCode)
-    {
+    public static function getErrorName($errorCode) {
         if (!isset(static::$errorNames[$errorCode])) {
             throw new InvalidArgumentException(sprintf(
-                'The error code "%s" does not exist for constraint of type "%s".',
-                $errorCode,
-                get_called_class()
+                    'The error code "%s" does not exist for constraint of type "%s".', $errorCode, get_called_class()
             ));
         }
 
@@ -115,8 +112,7 @@ abstract class Constraint
      *                                       array, but getDefaultOption() returns
      *                                       null
      */
-    public function __construct($options = null)
-    {
+    public function __construct($options = null) {
         $invalidOptions = array();
         $missingOptions = array_flip((array) $this->getRequiredOptions());
         $knownOptions = get_object_vars($this);
@@ -146,7 +142,7 @@ abstract class Constraint
 
             if (null === $option) {
                 throw new ConstraintDefinitionException(
-                    sprintf('No default option is configured for constraint %s', get_class($this))
+                sprintf('No default option is configured for constraint %s', get_class($this))
                 );
             }
 
@@ -160,15 +156,13 @@ abstract class Constraint
 
         if (count($invalidOptions) > 0) {
             throw new InvalidOptionsException(
-                sprintf('The options "%s" do not exist in constraint %s', implode('", "', $invalidOptions), get_class($this)),
-                $invalidOptions
+            sprintf('The options "%s" do not exist in constraint %s', implode('", "', $invalidOptions), get_class($this)), $invalidOptions
             );
         }
 
         if (count($missingOptions) > 0) {
             throw new MissingOptionsException(
-                sprintf('The options "%s" must be set for constraint %s', implode('", "', array_keys($missingOptions)), get_class($this)),
-                array_keys($missingOptions)
+            sprintf('The options "%s" must be set for constraint %s', implode('", "', array_keys($missingOptions)), get_class($this)), array_keys($missingOptions)
             );
         }
     }
@@ -185,8 +179,7 @@ abstract class Constraint
      *
      * @throws InvalidOptionsException If an invalid option name is given
      */
-    public function __set($option, $value)
-    {
+    public function __set($option, $value) {
         if ('groups' === $option) {
             $this->groups = (array) $value;
 
@@ -211,8 +204,7 @@ abstract class Constraint
      *
      * @internal This method should not be used or overwritten in userland code.
      */
-    public function __get($option)
-    {
+    public function __get($option) {
         if ('groups' === $option) {
             $this->groups = array(self::DEFAULT_GROUP);
 
@@ -227,8 +219,7 @@ abstract class Constraint
      *
      * @param string $group
      */
-    public function addImplicitGroupName($group)
-    {
+    public function addImplicitGroupName($group) {
         if (in_array(self::DEFAULT_GROUP, $this->groups) && !in_array($group, $this->groups)) {
             $this->groups[] = $group;
         }
@@ -243,8 +234,8 @@ abstract class Constraint
      *
      * @see __construct()
      */
-    public function getDefaultOption()
-    {
+    public function getDefaultOption() {
+        
     }
 
     /**
@@ -256,8 +247,7 @@ abstract class Constraint
      *
      * @see __construct()
      */
-    public function getRequiredOptions()
-    {
+    public function getRequiredOptions() {
         return array();
     }
 
@@ -270,9 +260,8 @@ abstract class Constraint
      *
      * @return string
      */
-    public function validatedBy()
-    {
-        return get_class($this).'Validator';
+    public function validatedBy() {
+        return get_class($this) . 'Validator';
     }
 
     /**
@@ -284,8 +273,7 @@ abstract class Constraint
      *
      * @return string|array One or more constant values
      */
-    public function getTargets()
-    {
+    public function getTargets() {
         return self::PROPERTY_CONSTRAINT;
     }
 
@@ -298,11 +286,11 @@ abstract class Constraint
      *           {@link \Serializable} in the future. Please don't use or
      *           overwrite it.
      */
-    public function __sleep()
-    {
+    public function __sleep() {
         // Initialize "groups" option if it is not set
         $this->groups;
 
         return array_keys(get_object_vars($this));
     }
+
 }
