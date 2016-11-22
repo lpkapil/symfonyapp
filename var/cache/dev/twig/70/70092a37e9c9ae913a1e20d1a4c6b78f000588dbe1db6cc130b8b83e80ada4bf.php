@@ -21,49 +21,63 @@ class __TwigTemplate_7c804f4effb53409f424979b3ea5fb5895fdeddb36807c49e5c54176a97
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1e4a0dd8126fbed039d16c02931a91827a053529c513ffba29fa5632078f4a37 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1e4a0dd8126fbed039d16c02931a91827a053529c513ffba29fa5632078f4a37->enter($__internal_1e4a0dd8126fbed039d16c02931a91827a053529c513ffba29fa5632078f4a37_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CustomCMSBundle:category:new.html.twig"));
+        $__internal_d73d145b0a8123efd22bbe77d4659d5e2b7e4960b1deffbe2489f7d38a39aa83 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d73d145b0a8123efd22bbe77d4659d5e2b7e4960b1deffbe2489f7d38a39aa83->enter($__internal_d73d145b0a8123efd22bbe77d4659d5e2b7e4960b1deffbe2489f7d38a39aa83_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "CustomCMSBundle:category:new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1e4a0dd8126fbed039d16c02931a91827a053529c513ffba29fa5632078f4a37->leave($__internal_1e4a0dd8126fbed039d16c02931a91827a053529c513ffba29fa5632078f4a37_prof);
+        $__internal_d73d145b0a8123efd22bbe77d4659d5e2b7e4960b1deffbe2489f7d38a39aa83->leave($__internal_d73d145b0a8123efd22bbe77d4659d5e2b7e4960b1deffbe2489f7d38a39aa83_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7e4d0331e782e2f7056da7ad2d483210bbac040f11dafb29694755bcad04a2eb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7e4d0331e782e2f7056da7ad2d483210bbac040f11dafb29694755bcad04a2eb->enter($__internal_7e4d0331e782e2f7056da7ad2d483210bbac040f11dafb29694755bcad04a2eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "CustomCMSBundle:category:new.html.twig"));
+        $__internal_febce94ea74e34d32f75faf52c3aee92c76afed1d5b78e10b7ad520b25108548 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_febce94ea74e34d32f75faf52c3aee92c76afed1d5b78e10b7ad520b25108548->enter($__internal_febce94ea74e34d32f75faf52c3aee92c76afed1d5b78e10b7ad520b25108548_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "CustomCMSBundle:category:new.html.twig"));
 
         // line 4
-        echo "    <h1>Category creation</h1>
+        echo "    <div class=\"page-header\">
+        <h2>Add New Category</h2>
+    </div>
 
     ";
-        // line 6
+        // line 12
+        echo "
+    <div class=\"panel panel-default\">
+        <div class=\"panel-body\">
+            ";
+        // line 15
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
-        ";
-        // line 7
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+
+            <div class=\"form-group clearfix\">
+                ";
+        // line 18
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'label', array("label_attr" => array("class" => "control-label col-xs-2"), "label" => "Category Name"));
         echo "
-        <input type=\"submit\" value=\"Create\" />
-    ";
-        // line 9
+                <div class=\"col-xs-6\">
+                    ";
+        // line 20
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+                </div>
+            </div><br>
+
+            <div class=\"form-group pull-right\">
+                <div class=\"col-xs-offset-2 col-xs-10\">
+                    <button type=\"submit\" class=\"btn btn-primary\">Create</button>
+                </div>
+            </div>
+            ";
+        // line 29
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-
-    <ul>
-        <li>
-            <a href=\"";
-        // line 13
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("cms_category_index");
-        echo "\">Back to the list</a>
-        </li>
-    </ul>
+        </div>
+    </div>
 ";
         
-        $__internal_7e4d0331e782e2f7056da7ad2d483210bbac040f11dafb29694755bcad04a2eb->leave($__internal_7e4d0331e782e2f7056da7ad2d483210bbac040f11dafb29694755bcad04a2eb_prof);
+        $__internal_febce94ea74e34d32f75faf52c3aee92c76afed1d5b78e10b7ad520b25108548->leave($__internal_febce94ea74e34d32f75faf52c3aee92c76afed1d5b78e10b7ad520b25108548_prof);
 
     }
 
@@ -79,7 +93,7 @@ class __TwigTemplate_7c804f4effb53409f424979b3ea5fb5895fdeddb36807c49e5c54176a97
 
     public function getDebugInfo()
     {
-        return array (  60 => 13,  53 => 9,  48 => 7,  44 => 6,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  74 => 29,  62 => 20,  57 => 18,  51 => 15,  46 => 12,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -95,18 +109,34 @@ class __TwigTemplate_7c804f4effb53409f424979b3ea5fb5895fdeddb36807c49e5c54176a97
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Category creation</h1>
+    <div class=\"page-header\">
+        <h2>Add New Category</h2>
+    </div>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type=\"submit\" value=\"Create\" />
-    {{ form_end(form) }}
+    {#{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type=\"submit\" value=\"Create\" />
+    {{ form_end(form) }}#}
 
-    <ul>
-        <li>
-            <a href=\"{{ path('cms_category_index') }}\">Back to the list</a>
-        </li>
-    </ul>
+    <div class=\"panel panel-default\">
+        <div class=\"panel-body\">
+            {{ form_start(form) }}
+
+            <div class=\"form-group clearfix\">
+                {{ form_label(form.name, 'Category Name', {'label_attr': {'class': 'control-label col-xs-2'}}) }}
+                <div class=\"col-xs-6\">
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}})  }}
+                </div>
+            </div><br>
+
+            <div class=\"form-group pull-right\">
+                <div class=\"col-xs-offset-2 col-xs-10\">
+                    <button type=\"submit\" class=\"btn btn-primary\">Create</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}
 ", "CustomCMSBundle:category:new.html.twig", "/var/www/html/symfonyapp/src/Custom/CMSBundle/Resources/views/category/new.html.twig");
     }
