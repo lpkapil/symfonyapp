@@ -1,21 +1,52 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>User edit</h1>
+    <div class="page-header">
+        <h2>Edit User</h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{ form_start(edit_form) }}
 
-    {{ form_start(edit_form) }}
-    {{ form_widget(edit_form) }}
-    <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+            <div class="form-group clearfix">
+                {{ form_label(edit_form.username, 'Username', {'label_attr': {'class': 'control-label col-xs-2'}}) }}
+                <div class="col-xs-6">
+                    {{ form_widget(edit_form.username, {'attr': {'class': 'form-control'}})  }}
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                {{ form_label(edit_form.password, 'Password', {'label_attr': {'class': 'control-label col-xs-2'}}) }}
+                <div class="col-xs-6">
+                    {{ form_widget(edit_form.password, {'attr': {'class': 'form-control'}})  }}
+                </div>
+            </div><br>
 
-    <ul>
-        <li>
-            <a href="{{ path('cms_user_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    {{ form_end(edit_form) }
+                    {{ form_start(delete_form) }} %
+                    <button type="submit" value="Delete"class="btn btn-danger">Delete</button>
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {#    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+        {{ form_end(edit_form) }}#}
+
+    {#  <ul>
+          <li>
+              <a href="{{ path('cms_user_index') }}">Back to the list</a>
+          </li>
+          <li>
+              {{ form_start(delete_form) }}
+              <input type="submit" value="Delete">
+              {{ form_end(delete_form) }}
+          </li>
+      </ul>#}
 {% endblock %}
