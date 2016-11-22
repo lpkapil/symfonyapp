@@ -2,6 +2,7 @@
 
 {% block body %}
     <div class="page-header">
+        <a href="{{ path('cms_user_new') }}" class="btn btn-sm btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span> Add New</a>
         <h2>Users</h2>
     </div>
 
@@ -27,10 +28,4 @@
             </tbody>
         </table>
     </div>
-
-    <ul>
-        <li>
-            <a href="{{ path('cms_user_new') }}">Create a new user</a>
-        </li>
-    </ul>
 {% endblock %}

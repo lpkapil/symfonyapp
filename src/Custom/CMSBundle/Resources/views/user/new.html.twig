@@ -1,16 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>User creation</h1>
+    <div class="page-header">
+        <h2>Add New User</h2>
+    </div>
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    {#    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+        {{ form_end(form) }}#}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{ form_start(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('cms_user_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <div class="form-group clearfix">
+                {{ form_label(form.username, 'Username', {'label_attr': {'class': 'control-label col-xs-2'}}) }}
+                <div class="col-xs-6">
+                    {{ form_widget(form.username, {'attr': {'class': 'form-control'}})  }}
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                {{ form_label(form.password, 'Password', {'label_attr': {'class': 'control-label col-xs-2'}}) }}
+                <div class="col-xs-6">
+                    {{ form_widget(form.password, {'attr': {'class': 'form-control'}})  }}
+                </div>
+            </div><br>
+
+            <div class="form-group pull-right">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}
