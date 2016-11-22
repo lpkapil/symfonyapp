@@ -18,9 +18,7 @@ class CategoryController extends Controller {
      */
     public function indexAction() {
         $em = $this->getDoctrine()->getManager();
-
         $categories = $em->getRepository('CustomCMSBundle:Category')->findAll();
-
         return $this->render('CustomCMSBundle:category:index.html.twig', array(
                     'categories' => $categories,
         ));
